@@ -45,17 +45,11 @@ jobs:
       - name: Run tests (if any)
         run: npm test --if-present
         
-      - name: Commit build files (manual trigger only)
+      - name: Bump version (manual trigger only)
         if: github.event_name == 'workflow_dispatch'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add build/ || true
-          git diff --staged --quiet || git commit -m "Update build files"
-        
-      - name: Bump version (manual trigger only)
-        if: github.event_name == 'workflow_dispatch'
-        run: |
           npm version ${{ github.event.inputs.version }}
           git push origin main
           git push origin --tags
