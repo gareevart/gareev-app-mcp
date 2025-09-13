@@ -45,12 +45,41 @@ jobs:
       - name: Run tests (if any)
         run: npm test --if-present
         
-      - name: Bump version (manual trigger only)
+      - name: Check git status before version bump
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          echo "=== Git status before version bump ==="
+          git status
+          echo "=== Git diff ==="
+          git diff
+          echo "=== Untracked files ==="
+          git ls-files --others --exclude-standard
+        
+      - name: Clean working directory
         if: github.event_name == 'workflow_dispatch'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          npm version ${{ github.event.inputs.version }}
+          # Reset any changes to tracked files
+          git checkout -- .
+          # Remove untracked files (except those in .gitignore)
+          git clean -fd
+          echo "=== Git status after cleanup ==="
+          git status
+        
+      - name: Bump version (manual trigger only)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          # Use --no-git-tag-version to avoid git operations during npm version
+          NEW_VERSION=$(npm version ${{ github.event.inputs.version }} --no-git-tag-version)
+          echo "New version: $NEW_VERSION"
+          
+          # Manually commit and tag
+          git add package.json package-lock.json
+          git commit -m "Bump version to $NEW_VERSION"
+          git tag "$NEW_VERSION"
+          
+          # Push changes and tags
           git push origin main
           git push origin --tags
         env:
