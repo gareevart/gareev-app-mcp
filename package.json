@@ -1,0 +1,46 @@
+{
+  "name": "@gareev/gareev-app-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Supabase upload app management - provides tools for blog posts, broadcasts, subscribers, and more",
+  "type": "module",
+  "main": "build/index.js",
+  "bin": {
+    "supabase-app-mcp": "build/index.js"
+  },
+  "files": [
+    "build/**/*",
+    "README.md",
+    "package.json"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "supabase",
+    "blog",
+    "newsletter",
+    "ai-tools"
+  ],
+  "author": "Dmitrrii <gareev.da92@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gareevart/gareev-app-mcp.git"
+  },
+  "homepage": "https://github.com/gareevart/gareev-app-mcp#readme",
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "dev": "tsc --watch",
+    "start": "node build/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@supabase/supabase-js": "^2.49.4",
+    "axios": "^1.6.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
