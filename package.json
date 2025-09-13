@@ -24,7 +24,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gareevart/gareev-app-mcp.git"
+    "url": "git+https://github.com/gareevart/gareev-app-mcp.git"
   },
   "homepage": "https://github.com/gareevart/gareev-app-mcp#readme",
   "scripts": {
