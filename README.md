@@ -1,7 +1,7 @@
 # gareev.de App MCP Server
 
-[![NPM Version](https://img.shields.io/npm/v/@gareev/gareev-app-mcp)](https://www.npmjs.com/package/@your-username/supabase-app-mcp-server)
-[![Node.js CI](https://github.com/your-username/supabase-app-mcp-server/actions/workflows/ci.yml/badge.svg)](https://github.com/your-username/supabase-app-mcp-server/actions/workflows/ci.yml)
+[![NPM Version](https://img.shields.io/npm/v/@gareev/gareev-app-mcp)](https://www.npmjs.com/package/@gareev/gareev-app-mcp)
+[![Node.js CI](https://github.com/gareevart/gareev-app-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/gareevart/gareev-app-mcp/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > **AI-powered tools for Supabase Upload App management** - Blog posts, newsletters, subscribers, and more through natural language commands.
