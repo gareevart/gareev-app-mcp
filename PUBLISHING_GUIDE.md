@@ -27,7 +27,7 @@
    ```bash
    git init
    git add .
-   git commit -m "Initial commit: Supabase App MCP Server"
+   git commit -m "Initial commit: Gareev App MCP Server"
    git branch -M main
    git remote add origin https://github.com/gareevart/gareev-app-mcp.git
    git push -u origin main
