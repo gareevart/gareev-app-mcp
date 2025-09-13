@@ -1,6 +1,6 @@
-# Supabase App MCP Server
+# gareev.de App MCP Server
 
-[![NPM Version](https://img.shields.io/npm/v/@your-username/supabase-app-mcp-server)](https://www.npmjs.com/package/@your-username/supabase-app-mcp-server)
+[![NPM Version](https://img.shields.io/npm/v/@gareev/gareev-app-mcp)](https://www.npmjs.com/package/@your-username/supabase-app-mcp-server)
 [![Node.js CI](https://github.com/your-username/supabase-app-mcp-server/actions/workflows/ci.yml/badge.svg)](https://github.com/your-username/supabase-app-mcp-server/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -10,12 +10,12 @@
 
 ### One-line Installation
 ```bash
-curl -fsSL https://raw.githubusercontent.com/your-username/supabase-app-mcp-server/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/gareevart/gareev-app-mcp/main/install.sh | bash
 ```
 
 ### Manual Installation
 ```bash
-npm install -g @your-username/supabase-app-mcp-server
+npm install -g @gareev/gareev-app-mcp
 ```
 
 ## 📋 Prerequisites
@@ -141,7 +141,7 @@ Your Supabase project needs these tables:
 
 ### Local Development
 ```bash
-git clone https://github.com/your-username/supabase-app-mcp-server.git
+git clone https://github.com/gareevart/gareev-app-mcp.git
 cd supabase-app-mcp-server
 npm install
 npm run build
@@ -177,7 +177,7 @@ supabase-app-mcp-server/
 **❌ "Server not found"**
 - Restart your editor after installation
 - Check MCP settings configuration
-- Verify server installation: `npm list -g @your-username/supabase-app-mcp-server`
+- Verify server installation: `npm list -g @gareev/gareev-app-mcp`
 
 **❌ "Environment variables required"**
 - Double-check `SUPABASE_URL` and `SUPABASE_ANON_KEY` in MCP settings
@@ -219,8 +219,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Issues:** [GitHub Issues](https://github.com/your-username/supabase-app-mcp-server/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/your-username/supabase-app-mcp-server/discussions)
+- **Issues:** [GitHub Issues](https://github.com/gareevart/gareev-app-mcp/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/gareevart/gareev-app-mcp/discussions)
 - **Documentation:** [User Guide](USER_GUIDE.md)
 
 ---
