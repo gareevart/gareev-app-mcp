@@ -47,8 +47,8 @@ fi
 print_success "Node.js $(node -v) detected"
 
 # Install the MCP server globally
-print_status "Installing Supabase App MCP Server..."
-npm install -g @your-username/supabase-app-mcp-server
+print_status "Installing Gareev MCP Server..."
+npm install -g @gareev/gareev-app-mcp
 
 # Detect MCP settings file location
 MCP_SETTINGS_FILE=""
@@ -60,9 +60,9 @@ elif [ -d "$HOME/.config/Code/User/globalStorage/viknet.intelliboba/settings" ];
     MCP_SETTINGS_FILE="$HOME/.config/Code/User/globalStorage/viknet.intelliboba/settings/mcp_settings.json"
 # Check for Cursor
 elif [ -d "$HOME/Library/Application Support/Cursor/User/globalStorage/viknet.intelliboba/settings" ]; then
-    MCP_SETTINGS_FILE="$HOME/Library/Application Support/Cursor/User/globalStorage/viknet.intelliboba/settings/mcp_settings.json"
+    MCP_SETTINGS_FILE="$HOME/Library/Application Support/Cursor/User/globalStorage/viknet.intelliboba/settings/mcp.json"
 elif [ -d "$HOME/.config/Cursor/User/globalStorage/viknet.intelliboba/settings" ]; then
-    MCP_SETTINGS_FILE="$HOME/.config/Cursor/User/globalStorage/viknet.intelliboba/settings/mcp_settings.json"
+    MCP_SETTINGS_FILE="$HOME/.config/Cursor/User/globalStorage/viknet.intelliboba/settings/mcp.json"
 fi
 
 if [ -z "$MCP_SETTINGS_FILE" ]; then
@@ -71,7 +71,7 @@ if [ -z "$MCP_SETTINGS_FILE" ]; then
     cat << 'EOF'
 {
   "mcpServers": {
-    "supabase-app-server": {
+    "gareev-app-mcp": {
       "disabled": false,
       "timeout": 60,
       "alwaysAllow": [
@@ -88,7 +88,7 @@ if [ -z "$MCP_SETTINGS_FILE" ]; then
       "type": "stdio",
       "command": "npx",
       "args": [
-        "@your-username/supabase-app-mcp-server"
+        "@gareev/gareev-app-mcp"
       ],
       "env": {
         "SUPABASE_URL": "YOUR_SUPABASE_URL_HERE",
@@ -138,7 +138,7 @@ mkdir -p "$(dirname "$MCP_SETTINGS_FILE")"
 cat > "$MCP_SETTINGS_FILE" << EOF
 {
   "mcpServers": {
-    "supabase-app-server": {
+    "gareev-app-mcp": {
       "disabled": false,
       "timeout": 60,
       "alwaysAllow": [
@@ -155,7 +155,7 @@ cat > "$MCP_SETTINGS_FILE" << EOF
       "type": "stdio",
       "command": "npx",
       "args": [
-        "@your-username/supabase-app-mcp-server"
+        "@gareev/gareev-app-mcp"
       ],
       "env": {
         "SUPABASE_URL": "$SUPABASE_URL",
@@ -171,7 +171,7 @@ print_success "MCP configuration updated successfully!"
 
 echo ""
 print_status "Testing server connection..."
-if npx @your-username/supabase-app-mcp-server --version &> /dev/null; then
+if npx @gareev/gareev-app-mcp --version &> /dev/null; then
     print_success "Server is working correctly!"
 else
     print_warning "Server test failed. Please check your configuration."
