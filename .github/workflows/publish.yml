@@ -79,10 +79,7 @@ jobs:
       - name: Publish to NPM
         run: |
           echo "Publishing to NPM..."
-          npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_OTP: ${{ secrets.NPM_OTP }}
+          npm publish --access public --provenance
           
       - name: Get package version
         if: github.event_name == 'workflow_dispatch'
