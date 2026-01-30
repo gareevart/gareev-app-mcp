@@ -6,12 +6,12 @@
 
 ### Option 1: One-line install (Recommended)
 ```bash
-curl -fsSL https://raw.githubusercontent.com/your-username/supabase-app-mcp-server/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/gareevart/gareev-app-mcp/main/install.sh | bash
 ```
 
 ### Option 2: Manual installation
 ```bash
-npm install -g @your-username/supabase-app-mcp-server
+npm install -g @gareev/gareev-app-mcp
 ```
 
 ## Prerequisites
@@ -64,7 +64,7 @@ If you used the install script, configuration is automatic. Otherwise, add this 
       ],
       "type": "stdio",
       "command": "npx",
-      "args": ["@your-username/supabase-app-mcp-server"],
+      "args": ["@gareev/gareev-app-mcp"],
       "env": {
         "SUPABASE_URL": "https://your-project.supabase.co",
         "SUPABASE_ANON_KEY": "your-anon-key-here",
