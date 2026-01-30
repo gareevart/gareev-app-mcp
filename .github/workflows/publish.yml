@@ -45,6 +45,14 @@ jobs:
       - name: Run tests (if any)
         run: npm test --if-present
         
+      - name: Clear npm auth (OIDC only)
+        run: |
+          npm config delete //registry.npmjs.org/:_authToken || true
+          rm -f ~/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ""
+          NPM_TOKEN: ""
+
       - name: Bump version (manual trigger only)
         if: github.event_name == 'workflow_dispatch'
         run: |
