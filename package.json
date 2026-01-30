@@ -1,5 +1,5 @@
 {
-  "name": "@gareev/gareev-app-mcp",
+  "name": "@gareevart/gareev-app-mcp",
   "version": "2.0.9",
   "description": "MCP server for Supabase upload app management - provides tools for blog posts, broadcasts, subscribers, and more",
   "type": "module",
