@@ -51,7 +51,16 @@ jobs:
           # Configure git
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          
+
+          # Ensure version is based on latest tag to avoid duplicates
+          git fetch --tags
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          LATEST_VERSION=${LATEST_TAG#v}
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          if [ "$CURRENT_VERSION" != "$LATEST_VERSION" ]; then
+            npm version "$LATEST_VERSION" --no-git-tag-version
+          fi
+
           # Use --no-git-tag-version to avoid git operations during npm version
           NEW_VERSION=$(npm version ${{ github.event.inputs.version }} --no-git-tag-version)
           echo "New version: $NEW_VERSION"
